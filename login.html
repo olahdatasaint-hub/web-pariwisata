@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TourVenture Lampung - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="background-full">
+        <header class="logo-header">
+        </header>
+
+        <div class="panel-container">
+
+            <div class="pixel-box" id="login-box">
+                <div class="panel-header">LOGIN</div>
+
+                <form action="" method="POST">
+                    <div class="input-row">
+                        <div class="label-area">
+                            <span>🔑</span> <label>USERNAME</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="username" class="black-input" placeholder="Masukan Username"
+                                required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="label-area">
+                            <span>🔒</span> <label>PASSWORD</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="password" id="login-pass" name="password" class="black-input"
+                                placeholder="Masukan Password" required>
+                            <span class="toggle-password" onclick="togglePassword('login-pass', this)">👁️</span>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn-pixel btn-green"
+                            onclick="window.location.href='loading.html'">LOGIN</button>
+                        <button type="button" class="btn-pixel btn-red"
+                            onclick="switchForm('register')">REGISTER</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="pixel-box hidden" id="register-box">
+                <div class="panel-header">REGISTER</div>
+                <form action="" method="POST">
+                    <div class="input-row">
+                        <div class="label-area">
+                            <span>👤</span> <label>USERNAME</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="new_username" class="black-input" placeholder="Masukan Username"
+                                required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="label-area">
+                            <span>📧</span> <label>EMAIL</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="email" name="new_email" class="black-input" placeholder="Masukan Email"
+                                required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="label-area">
+                            <span>🔒</span> <label>PASSWORD</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="password" id="reg-pass" name="new_password" class="black-input"
+                                placeholder="Masukan Password" required>
+                            <span class="toggle-password" onclick="togglePassword('reg-pass', this)">👁️</span>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="label-area">
+                            <span>🔒</span> <label>KONFIRMASI</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="password" id="reg-confirm" name="confirm_password" class="black-input"
+                                placeholder="Konfirmasi Password" required>
+                            <span class="toggle-password" onclick="togglePassword('reg-confirm', this)">👁️</span>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn-pixel btn-green"
+                            onclick="alert('✅ Registrasi Berhasil! Silakan Login.'); switchForm('login');">DAFTAR</button>
+
+                        <button type="button" class="btn-pixel btn-red" onclick="switchForm('login')">KEMBALI</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

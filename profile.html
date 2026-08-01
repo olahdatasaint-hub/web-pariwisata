@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TourVenture - Profil Pemain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/profile-page.css">
+</head>
+<body>
+    
+    <!-- Tombol Kembali -->
+    <button class="btn-kembali-game" onclick="kembaliKeGame()">
+        <span class="btn-back-icon">◀</span> KEMBALI
+    </button>
+
+    <div class="profile-page-container">
+
+        <!-- ===== KARTU PROFIL UTAMA ===== -->
+        <div class="card-profil-utama">
+            <div class="profil-bg-pattern"></div>
+            
+            <div class="profil-utama-content">
+                <!-- Avatar Besar -->
+                <div class="big-avatar-area">
+                    <div class="big-avatar-ring" onclick="toggleAvatarPicker()">
+                        <img src="assets/chara.png" alt="Avatar" class="big-avatar-img" id="page-avatar">
+                    </div>
+                    <button class="btn-ubah-avatar" onclick="toggleAvatarPicker()">📷 Ubah Avatar</button>
+                    <div class="big-level-badge" id="page-level-badge">Level 1</div>
+                </div>
+
+                <!-- Info Utama -->
+                <div class="info-utama">
+                    <div class="info-nama-area">
+                        <div id="page-nama-display" class="nama-display-area">
+                            <h1 id="page-username" class="nama-besar">Explorer</h1>
+                            <button class="btn-edit-nama" onclick="toggleNamaEdit()">✏️</button>
+                        </div>
+                        <div id="page-nama-edit" class="nama-edit-area" style="display:none;">
+                            <input type="text" id="page-nama-input" class="input-nama-besar" maxlength="16" placeholder="Ketik nickname baru...">
+                            <button class="btn-simpan-nama" onclick="simpanNamaPage()">✔️</button>
+                            <button class="btn-batal-nama" onclick="toggleNamaEdit()">✖️</button>
+                        </div>
+                    </div>
+                    <p class="label-title-page">🗺️ Penjelajah Pemula</p>
+                    <div class="id-badge" id="page-userid">TV-ABC12345</div>
+                    
+                    <!-- EXP Bar Besar -->
+                    <div class="exp-section-page">
+                        <div class="exp-bar-big">
+                            <div class="exp-fill-big" id="page-exp-fill"></div>
+                        </div>
+                        <span class="exp-label-big" id="page-exp-label">0 / 300 EXP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel Pilih Avatar -->
+            <div id="page-avatar-picker" class="page-avatar-picker tersembunyi">
+                <div class="picker-header-page">
+                    <h3>🎭 Pilih Avatar Baru</h3>
+                    <button class="btn-close-picker-page" onclick="toggleAvatarPicker()">✖️</button>
+                </div>
+                <div class="avatar-grid-page" id="avatar-grid-page"></div>
+            </div>
+        </div>
+
+        <!-- ===== STATISTIK GAME ===== -->
+        <div class="section-judul-page">
+            <span class="judul-icon">📊</span>
+            <h2>Statistik Permainan</h2>
+        </div>
+
+        <div class="stats-grid-page">
+            <div class="stat-card-page">
+                <div class="stat-card-icon">🗺️</div>
+                <div class="stat-card-angka" id="ps-wilayah">1</div>
+                <div class="stat-card-nama">Wilayah Dibuka</div>
+                <div class="stat-card-bar"><div class="stat-bar-isi" style="width:7%;"></div></div>
+                <div class="stat-card-sub">1 / 15 total</div>
+            </div>
+            <div class="stat-card-page">
+                <div class="stat-card-icon">⭐</div>
+                <div class="stat-card-angka" id="ps-misi">0</div>
+                <div class="stat-card-nama">Misi Diselesaikan</div>
+                <div class="stat-card-bar"><div class="stat-bar-isi" style="width:0%;"></div></div>
+                <div class="stat-card-sub">0 misi</div>
+            </div>
+            <div class="stat-card-page">
+                <div class="stat-card-icon">🪙</div>
+                <div class="stat-card-angka" id="ps-koin">150</div>
+                <div class="stat-card-nama">Koin Terkumpul</div>
+                <div class="stat-card-bar"><div class="stat-bar-isi" style="width:15%; background: linear-gradient(90deg, #f39c12, #f1c40f);"></div></div>
+                <div class="stat-card-sub">Target: 1.000</div>
+            </div>
+            <div class="stat-card-page">
+                <div class="stat-card-icon">💎</div>
+                <div class="stat-card-angka" id="ps-diamond">10</div>
+                <div class="stat-card-nama">Diamond</div>
+                <div class="stat-card-bar"><div class="stat-bar-isi" style="width:10%; background: linear-gradient(90deg, #3498db, #9b59b6);"></div></div>
+                <div class="stat-card-sub">Target: 100</div>
+            </div>
+            <div class="stat-card-page">
+                <div class="stat-card-icon">❤️</div>
+                <div class="stat-card-angka">5</div>
+                <div class="stat-card-nama">Nyawa Tersisa</div>
+                <div class="stat-card-bar"><div class="stat-bar-isi" style="width:100%; background: linear-gradient(90deg, #e74c3c, #e67e22);"></div></div>
+                <div class="stat-card-sub">5 / 5</div>
+            </div>
+            <div class="stat-card-page">
+                <div class="stat-card-icon">🕐</div>
+                <div class="stat-card-angka" id="ps-waktu">—</div>
+                <div class="stat-card-nama">Waktu Bermain</div>
+                <div class="stat-card-bar"><div class="stat-bar-isi" style="width:5%;"></div></div>
+                <div class="stat-card-sub">Baru mulai</div>
+            </div>
+        </div>
+
+        <!-- ===== KOLEKSI SKIN ===== -->
+        <div class="section-judul-page">
+            <span class="judul-icon">👕</span>
+            <h2>Koleksi Kostum</h2>
+        </div>
+
+        <div class="koleksi-skin-page">
+            <div class="skin-card-page aktif">
+                <div class="skin-card-frame">
+                    <img src="assets/Frame 17.png" alt="Tulang Bawang" class="skin-card-img">
+                </div>
+                <h4>Tulang Bawang</h4>
+                <span class="skin-status dipakai">DIPAKAI</span>
+            </div>
+            <div class="skin-card-page terkunci-skin">
+                <div class="skin-card-frame">
+                    <img src="assets/6.png" alt="Melinting" class="skin-card-img">
+                    <div class="skin-gembok">🔒</div>
+                </div>
+                <h4>Melinting</h4>
+                <span class="skin-status">💎 500</span>
+            </div>
+            <div class="skin-card-page terkunci-skin">
+                <div class="skin-card-frame">
+                    <img src="assets/Frame 21.png" alt="Pesisir Teluk" class="skin-card-img">
+                    <div class="skin-gembok">🔒</div>
+                </div>
+                <h4>Pesisir Teluk</h4>
+                <span class="skin-status">💎 1000</span>
+            </div>
+            <div class="skin-card-page terkunci-skin">
+                <div class="skin-card-frame">
+                    <img src="assets/4.png" alt="Pesisir Semaka" class="skin-card-img">
+                    <div class="skin-gembok">🔒</div>
+                </div>
+                <h4>Pesisir Semaka</h4>
+                <span class="skin-status">💎 1000</span>
+            </div>
+        </div>
+
+        <!-- ===== ACHIEVEMENT LENGKAP ===== -->
+        <div class="section-judul-page">
+            <span class="judul-icon">🏆</span>
+            <h2>Semua Achievement</h2>
+        </div>
+
+        <div class="achievement-list-page">
+            <div class="ach-card-page selesai">
+                <div class="ach-card-medal">🏅</div>
+                <div class="ach-card-info">
+                    <h4>Penjelajah Lamsel</h4>
+                    <p>Membuka dan mengunjungi wilayah Lampung Selatan pertama kalinya.</p>
+                </div>
+                <div class="ach-card-status done">SELESAI</div>
+            </div>
+            <div class="ach-card-page">
+                <div class="ach-card-medal">🔒</div>
+                <div class="ach-card-info">
+                    <h4>Langkah Awal</h4>
+                    <p>Mencapai Level 5 dalam petualangan.</p>
+                </div>
+                <div class="ach-card-progress">
+                    <div class="ach-progress-bar"><div class="ach-progress-fill" style="width:20%;"></div></div>
+                    <span>1/5</span>
+                </div>
+            </div>
+            <div class="ach-card-page">
+                <div class="ach-card-medal">🔒</div>
+                <div class="ach-card-info">
+                    <h4>Sultan Kampung</h4>
+                    <p>Mengumpulkan total 1.000 Koin Emas.</p>
+                </div>
+                <div class="ach-card-progress">
+                    <div class="ach-progress-bar"><div class="ach-progress-fill" style="width:15%;"></div></div>
+                    <span>150/1000</span>
+                </div>
+            </div>
+            <div class="ach-card-page">
+                <div class="ach-card-medal">🔒</div>
+                <div class="ach-card-info">
+                    <h4>Sang Legenda Siger</h4>
+                    <p>Menemukan semua petunjuk rahasia di Menara Siger.</p>
+                </div>
+                <div class="ach-card-progress">
+                    <div class="ach-progress-bar"><div class="ach-progress-fill" style="width:0%;"></div></div>
+                    <span>Belum</span>
+                </div>
+            </div>
+            <div class="ach-card-page">
+                <div class="ach-card-medal">🔒</div>
+                <div class="ach-card-info">
+                    <h4>Kolektor Sejati</h4>
+                    <p>Mengoleksi semua kostum yang tersedia di Toko.</p>
+                </div>
+                <div class="ach-card-progress">
+                    <div class="ach-progress-bar"><div class="ach-progress-fill" style="width:20%;"></div></div>
+                    <span>1/5</span>
+                </div>
+            </div>
+            <div class="ach-card-page">
+                <div class="ach-card-medal">🔒</div>
+                <div class="ach-card-info">
+                    <h4>Penakluk Lampung</h4>
+                    <p>Membuka semua 15 wilayah di peta Lampung.</p>
+                </div>
+                <div class="ach-card-progress">
+                    <div class="ach-progress-bar"><div class="ach-progress-fill" style="width:7%;"></div></div>
+                    <span>1/15</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PENGATURAN ===== -->
+        <div class="section-judul-page">
+            <span class="judul-icon">⚙️</span>
+            <h2>Pengaturan</h2>
+        </div>
+
+        <div class="settings-page">
+            <div class="setting-row">
+                <div class="setting-info">
+                    <span class="setting-icon">🔊</span>
+                    <span class="setting-nama">Efek Suara</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <span class="setting-icon">🎵</span>
+                    <span class="setting-nama">Musik Latar</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <span class="setting-icon">📳</span>
+                    <span class="setting-nama">Getaran</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="setting-row danger-row">
+                <div class="setting-info">
+                    <span class="setting-icon">🗑️</span>
+                    <span class="setting-nama">Reset Semua Data</span>
+                </div>
+                <button class="btn-reset-data" onclick="resetSemuaData()">RESET</button>
+            </div>
+        </div>
+
+        <div class="footer-page">
+            <p>TourVenture Lampung v1.0 — &copy; 2026</p>
+        </div>
+
+    </div>
+
+    <script src="js/profile-page.js"></script>
+</body>
+</html>

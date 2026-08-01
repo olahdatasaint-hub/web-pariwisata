@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampung Selatan - Exploration Path</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/lamsel.css">
+</head>
+<body>
+
+    <div class="map-wrapper">
+    <div id="map-container">
+        <div id="level-container"></div>
+        
+        <div class="fog-zone" id="fog-area-2" style="left: 25%; top: 0; width: 75%; height: 100%; z-index: 16;"></div>
+        <div class="fog-zone" id="fog-area-3" style="left: 40%; top: 0; width: 60%; height: 100%; z-index: 15;"></div>
+        <div class="fog-zone" id="fog-area-4" style="left: 50%; top: 0; width: 50%; height: 100%; z-index: 14;"></div>
+
+    </div>
+</div>
+
+    <!-- RPG Dialog Box (Awalnya disembunyikan pakai class 'hidden') -->
+    <div id="rpg-dialog" class="rpg-dialog hidden">
+        <div class="dialog-content">
+            <p id="dialog-text">Pertanyaan akan muncul di sini...</p>
+        </div>
+        <div class="dialog-actions">
+            <button id="btn-ya" class="btn-pixel btn-green">YA, MASUK</button>
+            <button id="btn-tidak" class="btn-pixel btn-red">NANTI DULU</button>
+        </div>
+    </div>
+
+    <script src="js/lamsel.js"></script>
+</body>
+</html>

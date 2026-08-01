@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1 - Siger Park</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pra-siger.css">
+</head>
+<body>
+
+    <div id="game-kamera">
+        
+        <div id="peta-dunia">
+            <div id="player-ingame">
+                <img src="assets/lari1.png" id="char-sprite" alt="Player">
+            </div>
+            <button id="gerbang-lobi" onclick="window.location.href='siger.html'">Masuk ke Lobi Siger</button>
+
+            <div id="npc-nara" class="npc-container">
+    <!-- 1. Ikon tanda tanya melayang di posisi paling atas -->
+    <img src="assets/tandat.png" id="nara-indicator" class="floating-icon" alt="?">
+    
+    <!-- 2. Tulisan prompt buat ngobrol di tengah -->
+    <div id="nara-prompt" class="interaction-prompt">???</div>
+    
+    <!-- 3. Badan NPC Nara di posisi paling bawah berpijak ke tanah -->
+    <img src="assets/nara1.png" id="nara-map-sprite" alt="Nara">
+</div>
+        </div>
+        <!-- 👇 NPC Nara di Map 👇 -->
+
+
+        <div class="dialogue-container" id="dialogueContainer">
+            <div class="avatar-box">
+                <img src="assets/avatar-mc.png" alt="Avatar" id="charAvatar">
+            </div>
+            <div class="text-area">
+                <div class="char-name" id="charName">MC</div>
+                <p class="dialogue-text" id="dialogueText"></p>
+                <span class="blinking-arrow" id="nextArrow">▼</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/pra-siger.js"></script>
+</body>
+</html>

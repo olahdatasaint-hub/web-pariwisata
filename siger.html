@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menara Siger - Lobi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/siger.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="top-bar">
+            <div class="lokasi-title">Menara Siger</div>
+            <button class="btn-kembali" onclick="window.location.href='game.html'">KEMBALI KE PETA</button>
+        </div>
+
+        <div id="npc-area"></div>
+
+        <div class="dialog-box">
+            <div class="dialog-name">Kuncen Siger</div>
+            <div class="dialog-text" id="teks-cerita">
+                "Hentikan langkahmu, Penjelajah! Tidak ada yang boleh masuk ke ruang rahasia Menara Siger sebelum membuktikan kelayakannya."
+            </div>
+            
+            <div class="action-area">
+                <button class="btn-action" onclick="mulaiSistem()">TANYAKAN TENTANG PETUNJUK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/siger.js"></script>
+</body>
+</html>
